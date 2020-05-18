@@ -48,13 +48,8 @@ class Player
 
     public function getPlayTime(): int
     {
-        if($this->inMinute <= 1) {
-            $this->inMinute = 0;
-            
-        }
-        if($this->ycard == 2) {
-            $this->outMinute = $this->tycard;
-            
+        if(!$this->outMinute) {
+            return 0;
         }
 
         return $this->outMinute - $this->inMinute;
