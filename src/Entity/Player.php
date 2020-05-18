@@ -55,6 +55,35 @@ class Player
         return $this->outMinute - $this->inMinute;
     }
 
+        public function addYCard(): void
+    {
+        
+        $this->ycard += 1;
+        
+    }
+    public function addGol(): void
+    {
+        $this->gol += 1;
+
+    }
+
+    public function getMGoal(): int
+    {
+        return $this->gol;
+    }
+
+    public function getYCard(): int
+    {
+        return $this->ycard;
+    }
+    public function getTYCard(int $minute): void
+    {
+        $this->tycard = $minute;
+    }public function getMTYCard(): int
+    {
+        return $this->tycard;
+    }
+
     public function goToPlay(int $minute): void
     {
         $this->inMinute = $minute;
