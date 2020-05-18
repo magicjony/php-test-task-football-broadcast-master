@@ -14,6 +14,7 @@ class Team
     private string $coach;
     private int $goals;
 
+    private int $pos;
     public function __construct(string $name, string $country, string $logo, array $players, string $coach)
     {
         $this->assertCorrectPlayers($players);
