@@ -11,6 +11,7 @@ class Player
     private string $playStatus;
     private int $inMinute;
     private int $outMinute;
+    private int $postime;
 
     public function __construct(int $number, string $name)
     {
