@@ -123,6 +123,23 @@
                             {{ player.name }}
                         </td>
                         <td>
+                            {%if  player.MGoal  > 0 %}
+                            {{ player.MGoal }}
+                            <img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/goal.png">
+                            {% endif %}
+                        </td>
+                        <td>
+                            {%if  player.YCard  == 1  %}
+                            
+                            <img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/card.png">
+                            {%elseif  player.YCard  == 2  %}
+                            
+                            <img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/card.png">
+                            =><img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/yellow_red.png">
+                             
+                            {% endif %}
+                        </td>
+                        <td>
                             {{ player.playTime }}’
                         </td>
                     </tr>
