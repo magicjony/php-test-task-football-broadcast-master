@@ -146,6 +146,48 @@
                 {% endfor %}
                 </tbody>
             </table>
+            <div>
+                <th>Время на поле по позициям:</th>
+            </div>
+             <div>
+                <script>
+                    var myGlobalVar1 = 0;
+                    var myGlobalVar2 = 0;
+                    var myGlobalVar3 = 0;
+                    var myGlobalVar4 = 0;
+                 </script>
+                  
+                {% for player in team.players %}
+                 {%if  player.position  == 'В'  %}
+
+                 <script>
+                    var myGlobalVar1 = myGlobalVar1 + {{ player.playTime }}
+                 </script>
+                 {%elseif  player.position  == 'З'  %}
+
+                 <script>
+                    var myGlobalVar2 = myGlobalVar2 + {{ player.playTime }}
+                 </script>
+                 {%elseif  player.position  == 'П'  %}
+
+                 <script>
+                    var myGlobalVar3 = myGlobalVar3 + {{ player.playTime }}
+                 </script>
+                 {%elseif  player.position  == 'Н'  %}
+
+                 <script>
+                    var myGlobalVar4 = myGlobalVar4 + {{ player.playTime }}
+                 </script>
+                 
+                  {% endif %}
+                    {% endfor %}
+                    <script> 
+                        document.writeln("Вратари-" + myGlobalVar1+"'");
+                        document.writeln("Защитники-" + myGlobalVar2+"'");
+                        document.writeln("Полузащитники-" + myGlobalVar3+"'");
+                        document.writeln("Нападающие-" + myGlobalVar4+"'");
+                </script>
+             </div>
         </div>
     </div>
 {% endmacro %}
